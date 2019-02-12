@@ -1,9 +1,9 @@
-package com.example.testdemo.weatherapp.data
+package com.example.testdemo.weatherapp.data.server
 
 import com.google.gson.Gson
 import java.net.URL
 
-class Request(private val zipCode: String) {
+class Request(private val zipCode: Long) {
 
     companion object {
         private const val APP_ID = "15646a06818f61f7b8d7823ca833e1ce"

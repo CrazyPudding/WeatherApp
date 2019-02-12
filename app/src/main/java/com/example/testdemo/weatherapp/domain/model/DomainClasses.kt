@@ -1,7 +1,7 @@
 package com.example.testdemo.weatherapp.domain.model
 
 data class ForecastList(
-    val city: String, val country: String,
+    val _id: Long, val city: String, val country: String,
     val dailyForecast: List<Forecast>) {
 
     val size: Int
@@ -10,4 +10,4 @@ data class ForecastList(
     operator fun get(position: Int): Forecast = dailyForecast[position]
 }
 
-data class Forecast(val date: String, val description: String, val high: Int, val low: Int, val iconUrl: String)
+data class Forecast(val date: Long, val description: String, val high: Int, val low: Int, val iconUrl: String)
