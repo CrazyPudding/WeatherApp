@@ -1,14 +1,12 @@
-package com.example.testdemo.weatherapp.domain.mappers
+package com.example.testdemo.weatherapp.data.server
 
-import com.example.testdemo.weatherapp.data.server.Forecast
-import com.example.testdemo.weatherapp.data.server.ForecastResult
 import com.example.testdemo.weatherapp.domain.model.ForecastList
 import java.util.*
 import java.util.concurrent.TimeUnit
 import com.example.testdemo.weatherapp.domain.model.Forecast as ModelForecast
 
-class ForecastDataMapper {
-    fun convertFromDataModel(zipCode: Long, forecast: ForecastResult) = with(forecast) {
+class ServerDataMapper {
+    fun convertToDomain(zipCode: Long, forecast: ForecastResult) = with(forecast) {
         ForecastList(zipCode, city.name, city.country, convertForecastListToDomain(forecast.list))
     }
 
