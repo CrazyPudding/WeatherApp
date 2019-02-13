@@ -7,6 +7,7 @@ import com.example.testdemo.weatherapp.R
 import com.example.testdemo.weatherapp.extensions.slidEnter
 import com.example.testdemo.weatherapp.extensions.slidExit
 import com.example.testdemo.weatherapp.ui.App
+import org.jetbrains.anko.startActivity
 import org.jetbrains.anko.toast
 
 interface ToolbarManager {
@@ -22,7 +23,7 @@ interface ToolbarManager {
         toolbar.inflateMenu(R.menu.menu_main)
         toolbar.setOnMenuItemClickListener {
             when (it.itemId) {
-                R.id.action_setting -> App.instance.toast("Setting")
+                R.id.action_setting -> toolbar.context.startActivity<SettingsActivity>()
                 else -> App.instance.toast("Unknown option")
             }
             true
